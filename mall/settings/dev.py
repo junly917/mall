@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+print(BASE_DIR)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'users',
-    'mall.apps.users.apps.UsersConfig',
+    'mall.apps.users',
+    'mall.apps.validate',
 ]
 
 MIDDLEWARE = [

@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mall.apps.users import urls as users_urls
+from users import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/', include(users_urls)),
+    path('user/', include(urls)),
 ]
