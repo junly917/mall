@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
-print(BASE_DIR)
+sys.path.append(os.path.join(BASE_DIR, 'apps'))
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mall.apps.users',
-    'mall.apps.validate',
+    'users',
+    'validate',
 ]
 
 MIDDLEWARE = [
@@ -160,7 +160,14 @@ CACHES = {
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
-    }
+    },
+    "validate": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://:Speakin123@192.168.21.101:6379/2",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    },
 }
 
 # 日志配置
