@@ -1,7 +1,8 @@
 import os
 from celery import Celery
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "proj.settings")
+# 加载项目环境, 从manager.py里面拷过来.
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mall.settings.dev')
 
 # 定义celery app名称
 app = Celery("mall")
